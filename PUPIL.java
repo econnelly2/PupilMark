@@ -8,6 +8,10 @@ public class PUPIL
    public PUPIL()
    {
        //constructor
+       //initialise instance vars
+       fname = "";
+       sname = "";
+       mark = 0.0f;
     }
     
 }
