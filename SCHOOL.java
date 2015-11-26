@@ -15,16 +15,26 @@ public class SCHOOL
     }
 
     // top level algorithm
-    public void processPupil()
+    public void processPupil() throws IOException
     {
         setUpPupilList();
         countOKmark();
 
     }
 
-    private void setUpPupilList()
+    private void setUpPupilList() throws IOException
     {
-        // placeholder
+        // first user message
+        System.out.println("PupilMark School Pupil mark update");
+        System.out.println("** preparing to read data file.");
+        
+        // read file, fetch data as string array containing the rows 
+        String[] dataRows = markFile.readCSVtable();
+        // calculate the number of number rows, skip headings
+        noOFPupils = dataRows.length - 1;
+        
+        // update user with number of rows with pupil details
+        System.out.println("**" + noOFPupils + " rows read./n/n");
     }
 
     public void countOKmark()
