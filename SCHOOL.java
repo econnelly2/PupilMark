@@ -1,33 +1,35 @@
-
-/**
- * Write a description of class SCHOOL here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import javax.swing.JOptionPane;
+import java.io.*;
 public class SCHOOL
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // array of PUPIL objest
+    private PUPIL pupilList[];
+    // number of puils to be calculated 
+    int noOFPupils;
+    FILEREADCSV markFile;
 
-    /**
-     * Constructor for objects of class SCHOOL
-     */
     public SCHOOL()
     {
-        // initialise instance variables
-        x = 0;
+        markFile = new FILEREADCSV();
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    // top level algorithm
+    public void processPupil()
     {
-        // put your code here
-        return x + y;
+        setUpPupilList();
+        countOKmark();
+
     }
+
+    private void setUpPupilList()
+    {
+        // placeholder
+    }
+
+    public void countOKmark()
+    {
+        // placeholder
+    }
+
 }
