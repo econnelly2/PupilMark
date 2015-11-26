@@ -30,8 +30,8 @@ public class SCHOOL
         
         // read file, fetch data as string array containing the rows 
         String[] dataRows = markFile.readCSVtable();
-        // calculate the number of number rows, skip headings
-        noOFPupils = dataRows.length - 1;
+        // calculate the number of pupil rows
+        noOFPupils = dataRows.length;
         
         // update user with number of rows with pupil details
         System.out.println("**" + noOFPupils + " rows read./n/n");
