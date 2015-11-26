@@ -22,7 +22,7 @@ public class SCHOOL
 
     }
 
-    private void setUpPupilList() throws IOException
+    public void setUpPupilList() throws IOException
     {
         // first user message
         System.out.println("PupilMark School Pupil mark update");
