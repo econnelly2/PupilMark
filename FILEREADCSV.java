@@ -2,24 +2,22 @@ import javax.swing.*;
 import java.io.*;                   // for general file handling
 public class FILEREADCSV
 {
-   private FileReader fReader;   // an object to fetch data from file
+    private FileReader fReader;   // an object to fetch data from file
 
+    public String[] readCSVtable() throws IOException {
+        File currentDir = new File("").getAbsoluteFile();
+        final JFileChooser fc = new JFileChooser(currentDir);
+        int returnVal = fc.showOpenDialog(null);
+        File csvFile = fc.getSelectedFile();
 
-   public String[] readCSVtable() throws IOException {
+        char[] inBuffer = new char[5000];
 
-       File currentDir = new File("").getAbsoluteFile();
-       final JFileChooser fc = new JFileChooser(currentDir);
-       int returnVal = fc.showOpenDialog(null);
-       File csvFile = fc.getSelectedFile();
+        fReader = new FileReader(csvFile);
+        int size = fReader.read(inBuffer);
+        fReader.close();
 
-       char[] inBuffer = new char[5000];
+        String fileContent = String.valueOf(inBuffer).substring(0,size);
 
-       fReader = new FileReader(csvFile);
-       int size = fReader.read(inBuffer);
-       fReader.close();
-
-       String fileContent = String.valueOf(inBuffer).substring(0,size);
-
-       return fileContent.split("\n");
-   }
+        return fileContent.split("\n");
+    }
 }
