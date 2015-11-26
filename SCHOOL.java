@@ -35,7 +35,16 @@ public class SCHOOL
         
         // update user with number of rows with pupil details
         System.out.println("**" + noOFPupils + " rows read./n/n");
+        
+        // prepare array for pupils
+        pupilList = new PUPIL[noOFPupils];
+        // create pupil objects and copy data from
+        for (int i = 0; i < noOFPupils; i++) {
+            pupilList[i] = new PUPIL();
+            // adjust to skip headings
+            pupilList[i].readPupilDetails(dataRows[i]);
     }
+}
 
     public void countOKmark()
     {
