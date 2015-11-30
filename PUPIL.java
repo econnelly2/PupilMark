@@ -3,7 +3,7 @@ public class PUPIL
     //list of properties 
     private String fname;
     private String sname;
-    private float mark;
+    private int mark;
 
     public PUPIL()
     {
@@ -11,7 +11,7 @@ public class PUPIL
         //initialise instance vars
         fname = "";
         sname = "";
-        mark = 0.0f;
+        mark = 0;
     }
 
     public void readPupilsMark(String dataItems)
@@ -22,7 +22,7 @@ public class PUPIL
         // store each data item as instance property 
         fname = rowItems [0];
         sname = rowItems [1];
-        mark = Float.parseFloat(rowItems[2]);
+        mark = Integer.parseInt(rowItems [2]);
 
         // produce name & mark of highest mark; 
     }
@@ -40,7 +40,7 @@ public class PUPIL
         return memberData;
     }   
 
-    public float getmark()
+    public int getmark()
     {
         return mark;
     }
