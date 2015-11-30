@@ -39,4 +39,17 @@ public class PUPIL
         memberData = memberData.concat(Float.toString(mark));
         return memberData;
     }   
-}  
+
+    public float getmark()
+    {
+        return mark;
+    }
+
+    public void displayDetails()
+    {
+        //output basic details
+        System.out.print("pupil: " + fname + " " + sname);
+        System.out.print(", mark is ");
+        System.out.println();
+    }
+}

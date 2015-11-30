@@ -27,15 +27,15 @@ public class SCHOOL
         // first user message
         System.out.println("PupilMark School Pupil mark update");
         System.out.println("** preparing to read data file.");
-        
+
         // read file, fetch data as string array containing the rows 
         String[] dataRows = markFile.readCSVtable();
         // calculate the number of pupil rows
         noOFPupils = dataRows.length;
-        
+
         // update user with number of rows with pupil details
         System.out.println("**" + noOFPupils + " rows read./n/n");
-        
+
         // prepare array for pupils
         pupilList = new PUPIL[noOFPupils];
         // create pupil objects and copy data from
@@ -43,12 +43,21 @@ public class SCHOOL
             pupilList[i] = new PUPIL();
             // adjust to skip headings
             pupilList[i].readPupilsMark(dataRows[i]);
+        }
     }
-}
 
     public void countOKmark()
     {
-        // placeholder
-    }
+        // loop for each item : pupil
+        for (int i = 0; i < noOFPupils; i++)
+        {
+            // decide if current item: pupil matches target: mark
+            if ((pupilList[i].getmark() > 187) && (pupilList[i].getmark() <200))
+            {
+                // *display the details for the pupil
+                pupilList[i].display();
+            }
+        }
 
+    }
 }
