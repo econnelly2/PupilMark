@@ -48,6 +48,8 @@ public class SCHOOL
 
     public void countOKmark()
     {
+        //start the count
+        int count = 0;
         // loop for each item : pupil
         for (int i = 0; i < noOFPupils; i++)
         {
@@ -55,9 +57,10 @@ public class SCHOOL
             if ((pupilList[i].getmark() > 187) && (pupilList[i].getmark() <200))
             {
                 // *display the details for the pupil
-                pupilList[i].display();
+                pupilList[i].displayDetails();
             }
         }
-
+        //display the final count: mark
+        System.out.println("\n Total for OK mark is : " + count);
     }
 }
