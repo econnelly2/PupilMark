@@ -42,7 +42,7 @@ public class SCHOOL
         for (int i = 0; i < noOFPupils; i++) {
             pupilList[i] = new PUPIL();
             // adjust to skip headings
-            pupilList[i].readPupilDetails(dataRows[i]);
+            pupilList[i].readPupilsMark(dataRows[i]);
     }
 }
 
