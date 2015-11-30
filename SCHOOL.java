@@ -48,6 +48,8 @@ public class SCHOOL
 
     public void countOKmark()
     {
+        System.out.println("A report of pupils with the highest mark");
+
         //start the count
         int count = 0;
         // loop for each item : pupil
@@ -56,11 +58,15 @@ public class SCHOOL
             // decide if current item: pupil matches target: mark
             if ((pupilList[i].getmark() > 187) && (pupilList[i].getmark() <200))
             {
+                // add 1 to count: for highest mark
+                count = count + 1;
                 // *display the details for the pupil
                 pupilList[i].displayDetails();
             }
         }
         //display the final count: mark
         System.out.println("\n Total for OK mark is : " + count);
+        // a blank line to seperate this report from others.
+        System.out.println();
     }
 }
