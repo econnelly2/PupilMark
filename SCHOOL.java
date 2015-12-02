@@ -6,11 +6,14 @@ public class SCHOOL
     private PUPIL pupilList[];
     // number of puils to be calculated 
     int noOFPupils;
-    FILEREADCSV markFile;
+    FILEREADCSV markFile; //to read file from storage
+    FILEWRITECSV resultFile; // to write data to storage
 
     public SCHOOL()
     {
+        // create file handler objects
         markFile = new FILEREADCSV();
+        resultFile = new FILEWRITECSV() ;
 
     }
 
