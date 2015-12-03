@@ -49,9 +49,13 @@ public class SCHOOL
         }
     }
 
-    public void countOKmark()
+    public void countOKmark() throws IOException 
     {
+        // prepare a string to write data to disc
+        String fileContent = "";
+
         System.out.println("A report of pupils with the highest mark\n");
+
         int topmark = 0;
         //start the count
         int count = 0;
@@ -66,11 +70,24 @@ public class SCHOOL
                 count = count + 1;
                 // *display the details for the pupil
                 pupilList[i].displayDetails();
+                // *use ne line to separate rows in csv file, after 1st line 
+                if (count>1)
+                {
+                    fileContent = fileContent.concat("\n");
+                }
+                // *join on next line of data for writing to file
+                fileContent =
+                fileContent.concat(pupilList[i].writeDetails());
             }
         }
         //display the final count: mark
         System.out.println("\n Total for highest mark is : " + topmark);
         // a blank line to seperate this report from others.
         System.out.println();
+        
+        // *send for writing to file as a string containing all data 
+        System.out.println("** preparing to write data file.");
+        resultFile.writeCSVtable(fileContent);
+        System.out.println("** File written and closed.");
     }
 }
