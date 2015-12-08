@@ -58,16 +58,15 @@ public class SCHOOL
 
         int topmark = 0;
         //start the count
-        int count = 0;
+        //int count = 0;
         // loop for each item : pupil
         for (int i = 0; i < noOFPupils; i++)
         {
             // decide if current item: pupil matches target: mark
-            if ((pupilList[i].getmark() > topmark ))
+            if ((pupilList[i].getmark() > pupilList[topmark].getmark())){
             {
                 // add 1 to count: for highest mark
                 topmark = pupilList[i].getmark();
-                count = count + 1;
                 // *display the details for the pupil
                 pupilList[i].displayDetails();
                 // *join on next line of data for writing to file
@@ -76,8 +75,9 @@ public class SCHOOL
             }
         }
         //display the final count: mark
-        System.out.println("\n Total for highest mark is : " + topmark);
+        System.out.println("the name is: " + pupilList+ ", top mark is:" + topmark);
         // a blank line to seperate this report from others.
+        pupilList[topmark].displayDetails();
         System.out.println();
 
         // *send for writing to file as a string containing all data 
@@ -85,4 +85,5 @@ public class SCHOOL
         resultFile.writeCSVtable(fileContent);
         System.out.println("** File written and closed.");
     }
+}
 }
