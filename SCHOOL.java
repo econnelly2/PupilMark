@@ -86,4 +86,5 @@ public class SCHOOL
         resultFile.writeCSVtable(fileContent);
         System.out.println("** File written and closed.");
     }       
+
 }
