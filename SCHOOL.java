@@ -63,8 +63,8 @@ public class SCHOOL
         for (int i = 0; i < noOFPupils; i++)
         {
             // decide if current item: pupil matches target: mark
-            if ((pupilList[i].getmark() > pupilList[topmark].getmark())){
-            {
+            if (pupilList[i].getmark() > pupilList[topmark].getmark()){
+
                 // add 1 to count: for highest mark
                 topmark = pupilList[i].getmark();
                 // *display the details for the pupil
@@ -72,6 +72,7 @@ public class SCHOOL
                 // *join on next line of data for writing to file
                 fileContent =
                 fileContent.concat(pupilList[i].writeDetails());
+
             }
         }
         //display the final count: mark
@@ -84,6 +85,5 @@ public class SCHOOL
         System.out.println("** preparing to write data file.");
         resultFile.writeCSVtable(fileContent);
         System.out.println("** File written and closed.");
-    }
-}
+    }       
 }
