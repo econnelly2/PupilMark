@@ -40,7 +40,7 @@ public class PUPIL
         return memberData;
     }   
 
-    public int getmark()
+    public int getdata()
     {
         return mark;
     }
@@ -52,4 +52,5 @@ public class PUPIL
         System.out.print(", mark is ");
         System.out.println();
     }
+
 }

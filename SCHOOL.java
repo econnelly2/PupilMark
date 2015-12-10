@@ -65,13 +65,9 @@ public class SCHOOL
             // decide if current item: pupil matches target: mark
             if (pupilList[i].getmark() > pupilList[topmark].getmark()){
 
-                // add 1 to count: for highest mark
-                topmark = pupilList[i].getmark();
-                // *display the details for the pupil
-                pupilList[i].displayDetails();
-                // *join on next line of data for writing to file
-                fileContent =
-                fileContent.concat(pupilList[i].writeDetails());
+                // choose position of first value 
+                topmark = i;
+                
 
             }
         }
