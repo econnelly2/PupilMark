@@ -45,6 +45,11 @@ public class PUPIL
         return mark;
     }
 
+    public String getDetails()
+    {
+        return "pupil; " + fname +" " + sname;
+    }
+
     public void displayDetails()
     {
         //output basic details

@@ -63,7 +63,7 @@ public class SCHOOL
         for (int i = 0; i < noOFPupils; i++)
         {
             // decide if current item: pupil matches target: mark
-            if (pupilList[i].getmark() > pupilList[topmark].getmark()){
+            if (pupilList[i].getdata() > pupilList[topmark].getdata()){
 
                 // choose position of first value 
                 topmark = i;
@@ -71,12 +71,10 @@ public class SCHOOL
 
             }
         }
-        //display the final count: mark
-        System.out.println("the name is: " + pupilList+ ", top mark is:" + topmark);
-        // a blank line to seperate this report from others.
-        pupilList[topmark].displayDetails();
+        System.out.print(pupilList[topmark].getDetails());
+        System.out.print(pupilList[topmark].getdata());
         System.out.println();
-
+        
         // *send for writing to file as a string containing all data 
         System.out.println("** preparing to write data file.");
         resultFile.writeCSVtable(fileContent);
